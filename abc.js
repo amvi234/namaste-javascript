@@ -1,3 +1,28 @@
+// x = 10
+// a();
+// b();
+// console.log("global", x);
+// function a() {
+//     var x = 100;
+//     console.log("a", x);
+// }
+// function b() {
+//     var x = 200;
+//     console.log("b", x);
+// }
+
+setTimeout(function() {
+    console.log('now')
+}, 5000)
+
+function x(y) {
+    console.log('x is');
+    y();
+}
+x(function y() {
+    console.log("Hello");
+})
+
 // const submitName = (event) => {
 //     event.preventDefault();
 //     const name_input = document.getElementById('name_input');
@@ -98,22 +123,22 @@ const arr = [5, 1, 3, 2, 6];
 // })
 
 //Promise => .all, .allSettled,
-const p1 = new Promise((resolve, reject) => {
-    setTimeout(() => reject("P1 Success"), 1000);
-})
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => reject("P1 Success"), 1000);
+// })
 
-const p2 = new Promise((resolve, reject) => {
-    setTimeout(() => reject("P2 Success"), 1000);
-    // setTimeout(() => reject("P2 Fail"), 1000);
-})
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => reject("P2 Success"), 1000);
+//     // setTimeout(() => reject("P2 Fail"), 1000);
+// })
 
-const p3 = new Promise((resolve, reject) => {
-    // setTimeout(() => resolve("P3 Success"), 2000);
-    setTimeout(() => reject("P3 fail"), 1000);
-})
+// const p3 = new Promise((resolve, reject) => {
+//     // setTimeout(() => resolve("P3 Success"), 2000);
+//     setTimeout(() => reject("P3 fail"), 1000);
+// })
 //it will return a object in case of promise.allsettled
-Promise.any([p1, p2, p3]).then(res => {
-    console.log(res);
-}).catch(err => { console.error(err);
-                console.log(err.errors) 
-});
+// Promise.any([p1, p2, p3]).then(res => {
+//     console.log(res);
+// }).catch(err => { console.error(err);
+//                 console.log(err.errors) 
+// });
